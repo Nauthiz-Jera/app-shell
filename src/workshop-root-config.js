@@ -4,6 +4,7 @@ import {
   constructRoutes,
   constructLayoutEngine,
 } from "single-spa-layout";
+
 import microfrontendLayout from "./microfrontend-layout.html";
 import "./reset.css";
 
