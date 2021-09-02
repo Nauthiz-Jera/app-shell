@@ -14,12 +14,16 @@ module.exports = (webpackConfigEnv, argv) => {
 
   return merge(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
-    externals: [
-      "react",
-      "react-dom",
-      "react-router",
-      "react-router-dom",
-      "@workshop/app-components",
+    plugins: [
+      new HtmlWebpackPlugin({
+        inject: false,
+        template: "src/index.ejs",
+        templateParameters: {
+          isLocal: webpackConfigEnv && webpackConfigEnv.isLocal,
+          orgName,
+        },
+      }),
     ],
+    externals: ["react", "react-dom"],
   });
 };

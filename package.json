@@ -1,7 +1,7 @@
 {
-  "name": "@workshop/app-home",
+  "name": "@workshop/root-config",
   "scripts": {
-    "start": "webpack serve --port 8082",
+    "start": "webpack serve --port 9000 --env isLocal",
     "start:standalone": "webpack serve --env standalone",
     "build": "webpack --mode=production",
     "analyze": "webpack --mode=production --env analyze",
@@ -12,10 +12,6 @@
     "watch-tests": "cross-env BABEL_ENV=test jest --watch",
     "prepare": "husky install",
     "coverage": "cross-env BABEL_ENV=test jest --coverage"
-  },
-  "peerDependencies": {
-    "react-router": "*",
-    "react-router-dom": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -48,6 +44,7 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "single-spa-react": "^4.2.0"
+    "single-spa-react": "^4.2.0",
+    "single-spa-layout": "^1.6.0"
   }
 }
